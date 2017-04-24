@@ -7,6 +7,6 @@ def call(body) {
     body.delegate = config
     body()
 
-    sh "oc --context=${config.context} process ${config.processParams} -f ${config.template} | oc --context=${config.context} apply -f -"
+    sh "oc --context=${config.context} process ${config.processParams} -f ${config.templateFile} | oc --context=${config.context} apply -f -"
 }
 
